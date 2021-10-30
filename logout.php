@@ -22,11 +22,8 @@ require 'nav.php';
 
 <article>
 <form>
-    <p>Forms are styled like so:</p>
-
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
+    <p>Log out:</p>
+    <input type="submit" name="Logout" value="Log Out" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php

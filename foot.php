@@ -1,6 +1,6 @@
 </main>
 		<footer>
-			&copy; Northampton News 2017
+			&copy; Northampton News 2021
 		</footer>
 
 	</body>
