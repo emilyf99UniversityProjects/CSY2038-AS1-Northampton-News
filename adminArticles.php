@@ -22,12 +22,13 @@ require 'nav.php';
 
 <article>
 <form>
-	<p>Add a Category:</p>
+    <p>Forms are styled like so:</p>
 
-		<label>Category Title</label> <input type="text" />
-		<input type="submit" name="submit" value="Submit" />
+    <label>Field 1</label> <input type="text" />
+    <label>Field 2</label> <input type="text" />
+    <label>Textarea</label> <textarea></textarea>
 </form>
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';
-?>?>
+?>
