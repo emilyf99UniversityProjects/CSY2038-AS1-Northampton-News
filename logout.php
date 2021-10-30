@@ -23,7 +23,7 @@ require 'nav.php';
 <article>
 <form>
     <p>Log out:</p>
-    <input type="submit" name="Logout" value="Log Out" />
+    <input type="submit" name="LogOutClicked" value="Log Out" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php

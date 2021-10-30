@@ -22,11 +22,12 @@ require 'nav.php';
 
 <article>
 <form>
-    <p>Forms are styled like so:</p>
+    <p>Log into your account:</p>
 
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
+    <label>User Name</label> <input type="text" />
+    <label>Password</label> <input type="text" />
+
+    <input type="submit" name="LogInClicked " value="Log In" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php
