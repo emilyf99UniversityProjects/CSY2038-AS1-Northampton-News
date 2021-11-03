@@ -10,6 +10,13 @@ require 'head.php';
 require 'nav.php';
 ?>
 
+<!-- Delete the <nav> element if the sidebar is not required -->
+<nav>
+	<ul>
+		<li><a href="#">Register for an account</a></li>
+	</ul>
+</nav>
+
 <article>
 <form>
     <p>Log into your account:</p>
