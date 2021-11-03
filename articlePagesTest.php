@@ -1,4 +1,3 @@
-
 <!-- Head PHP contains the html head as well as the webpages header-->
 <?php
 require 'head.php';
@@ -10,22 +9,21 @@ require 'head.php';
 require 'nav.php';
 ?>
 
-<!-- Delete the <nav> element if the sidebar is not required -->
-<nav>
-	<ul>
-		<li><a href="#">Sidebar</a></li>
-		<li><a href="#">This can</a></li>
-		<li><a href="#">Be removed</a></li>
-		<li><a href="LogOut.php">Log Out</a></li>
-	</ul>
-</nav>
-
 <article>
-<form>
-	<p>Add a Category:</p>
+    <h1>Article Title</h1>
+    <em>Article Date</em>
+    <p>Articles Content</p>
 
-		<label>Category Title</label> <input type="text" />
-		<input type="submit" name="submit" value="Submit" />
+
+    <h3>Comments</h3>
+    <p>Comment content placeholder</p>
+<form>
+
+<!--needs to be wrapped in a php if for if the user is logged in-->
+    <p>Please Leave a Comment Below:</p>
+
+    <label>Comment</label> <textarea name = "commentText"></textarea>
+    <input type="submit" name="submit" value="Submit" method = "POST" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php

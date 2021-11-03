@@ -1,4 +1,7 @@
 
+<!-- IMPORTANT-->
+<!--article pages is for the individual article itself-->
+<!--PLEASE SEE THE TEMPLATE FILE-->
 <!-- Head PHP contains the html head as well as the webpages header-->
 <?php
 require 'head.php';

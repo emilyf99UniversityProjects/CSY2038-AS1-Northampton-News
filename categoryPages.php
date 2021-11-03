@@ -1,4 +1,12 @@
 
+
+
+<!-- IMPORTANT PLEASE READ-->
+<!--NAV BAR MUST DISPLAY LINKS THAT TAKE YOU TO A CAT PAGE FOR EACH CAT, MUST DISPLAY ALL TITLES AND DATES OF ALL THE ARTICLES-->
+
+
+
+
 <!-- Head PHP contains the html head as well as the webpages header-->
 <?php
 require 'head.php';
