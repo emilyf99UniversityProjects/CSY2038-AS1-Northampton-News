@@ -24,10 +24,10 @@ require 'nav.php';
 <form>
     <p>Log into your account:</p>
 
-    <label>User Name</label> <input type="text" />
+    <label>Email</label> <input type="text" />
     <label>Password</label> <input type="text" />
 
-    <input type="submit" name="LogInClicked " value="Log In" />
+    <input type="submit" name="submit " value="Log In" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php

@@ -22,7 +22,7 @@ require 'nav.php';
 
 <article>
 <form>
-    <p>Register for a Account:</p>
+    <p>Register for an Account:</p>
 
     <label>User Name</label> <input type="text" required/>
     <label>Email address</label> <input type="text" required />
