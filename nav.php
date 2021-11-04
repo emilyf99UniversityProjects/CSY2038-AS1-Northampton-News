@@ -7,6 +7,8 @@
 						<li><a class="articleLink" href="#">Category 2</a></li>
 						<li><a class="articleLink" href="#">Category 3</a></li>
 					</ul>
+					<li><a class="articleLink" href="register.php">Register </a></li>
+					<li><a class="articleLink" href="login.php">Log in </a></li>
 				</li>
 			</ul>
 		</nav>

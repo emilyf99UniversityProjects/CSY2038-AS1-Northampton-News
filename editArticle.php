@@ -10,6 +10,11 @@ require 'head.php';
 require 'nav.php';
 ?>
 
+<!-- Code for Side Bar Navigation (remove when not needed) -->
+<?php 
+require 'sideNavBar.php';
+?>
+
 <article>
 <form>
 	<p>Edit an Article:</p>

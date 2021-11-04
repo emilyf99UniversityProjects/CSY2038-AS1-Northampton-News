@@ -10,16 +10,6 @@ require 'head.php';
 require 'nav.php';
 ?>
 
-<!-- Delete the <nav> element if the sidebar is not required -->
-<nav>
-	<ul>
-		<li><a href="#">Sidebar</a></li>
-		<li><a href="#">This can</a></li>
-		<li><a href="#">Be removed</a></li>
-		<li><a href="#">When not needed</a></li>
-	</ul>
-</nav>
-
 <article>
 	<h2>A Page Heading</h2>
 	<p>Text goes in paragraphs</p>

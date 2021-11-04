@@ -10,15 +10,10 @@ require 'head.php';
 require 'nav.php';
 ?>
 
-<!-- Delete the <nav> element if the sidebar is not required -->
-<nav>
-	<ul>
-		<li><a href="#">Sidebar</a></li>
-		<li><a href="#">This can</a></li>
-		<li><a href="#">Be removed</a></li>
-		<li><a href="#">When not needed</a></li>
-	</ul>
-</nav>
+<!-- Code for Side Bar Navigation (remove when not needed) -->
+<?php 
+require 'sideNavBar.php';
+?>
 
 <article>
 <p> Fetches all comments and adds them here</p>

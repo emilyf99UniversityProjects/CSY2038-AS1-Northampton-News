@@ -10,6 +10,11 @@ require 'head.php';
 require 'nav.php';
 ?>
 
+<!-- Code for Side Bar Navigation (remove when not needed) -->
+<?php 
+require 'sideNavBar.php';
+?>
+
 <article>
 	<div>
 		<a href = "addArticle.php">Add a New Article</a>
