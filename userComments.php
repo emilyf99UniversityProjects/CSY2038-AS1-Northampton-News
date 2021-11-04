@@ -21,13 +21,7 @@ require 'nav.php';
 </nav>
 
 <article>
-<form>
-    <p>Forms are styled like so:</p>
-
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
-</form>
+<p> Fetches all comments and adds them here</p>
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';

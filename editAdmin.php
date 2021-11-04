@@ -22,11 +22,13 @@ require 'nav.php';
 
 <article>
 <form>
-    <p>Forms are styled like so:</p>
+	<p>Edit an Admin:</p>
 
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
+	<label>Name</label> <input name = "title" type="name" />
+	<label>Email Address</label> <textarea name = "email" required></textarea>
+	<label>Password<label> <textarea name = "password" required></textarea>
+
+	<input type="submit" name="submit" value="Submit" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php

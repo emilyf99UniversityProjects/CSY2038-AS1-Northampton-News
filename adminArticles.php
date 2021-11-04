@@ -10,24 +10,19 @@ require 'head.php';
 require 'nav.php';
 ?>
 
-<!-- Delete the <nav> element if the sidebar is not required -->
-<nav>
-	<ul>
-		<li><a href="#">Sidebar</a></li>
-		<li><a href="#">This can</a></li>
-		<li><a href="#">Be removed</a></li>
-		<li><a href="#">When not needed</a></li>
-	</ul>
-</nav>
-
 <article>
-<form>
-    <p>Forms are styled like so:</p>
+	<div>
+		<a href = "addArticle.php">Add a New Article</a>
+	</div>
 
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
-</form>
+	<div>
+		<p>test article</p>
+		<p><a href = "editArticle.php"> Edit Article </a></p>
+		<p><a href = "deleteArticle.php"> Delete Article</a></p>
+	</div>
+
+
+<!-- each article must have a link to edit or delete it. there must be a link to add a new article -->
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';

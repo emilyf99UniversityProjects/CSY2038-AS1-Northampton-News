@@ -24,7 +24,7 @@ require 'nav.php';
 <form>
 	<p>Add a Category:</p>
 
-		<label>Category Title</label> <input type="text" />
+		<label>Category Title</label> <input type="text" required />
 		<input type="submit" name="submit" value="Submit" />
 </form>
 <!-- contains the page footer and the closing html -->

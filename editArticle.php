@@ -10,23 +10,20 @@ require 'head.php';
 require 'nav.php';
 ?>
 
-<!-- Delete the <nav> element if the sidebar is not required -->
-<nav>
-	<ul>
-		<li><a href="#">Sidebar</a></li>
-		<li><a href="#">This can</a></li>
-		<li><a href="#">Be removed</a></li>
-		<li><a href="#">When not needed</a></li>
-	</ul>
-</nav>
-
 <article>
 <form>
-    <p>Forms are styled like so:</p>
+	<p>Edit an Article:</p>
 
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
+		<label>Title</label> <input name = "title" type="text" required />
+		<label>Content</label> <textarea name = "content" required></textarea>
+		<label>Category<label><select name="category" required>
+  									<option value="test">Test</option>
+  									<option value="test">Test</option>
+  									<option value="test">Test</option>
+  									<option value="test">Test</option>
+								</select>
+
+		<input type="submit" name="submit" value="Submit" />
 </form>
 <!-- contains the page footer and the closing html -->
 <?php

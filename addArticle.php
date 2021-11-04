@@ -22,11 +22,16 @@ require 'nav.php';
 
 <article>
 <form>
-	<p>Forms are styled like so:</p>
+	<p>Add an Article:</p>
 
-		<label>Field 1</label> <input type="text" />
-		<label>Field 2</label> <input type="text" />
-		<label>Textarea</label> <textarea></textarea>
+		<label>Title</label> <input name = "title" type="text" required />
+		<label>Content</label> <textarea name = "content" required></textarea>
+		<label>Category<label><select name="category" required>
+  									<option value="test">Test</option>
+  									<option value="test">Test</option>
+  									<option value="test">Test</option>
+  									<option value="test">Test</option>
+								</select>
 
 		<input type="submit" name="submit" value="Submit" />
 </form>

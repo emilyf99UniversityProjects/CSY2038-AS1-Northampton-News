@@ -10,24 +10,16 @@ require 'head.php';
 require 'nav.php';
 ?>
 
-<!-- Delete the <nav> element if the sidebar is not required -->
-<nav>
-	<ul>
-		<li><a href="#">Sidebar</a></li>
-		<li><a href="#">This can</a></li>
-		<li><a href="#">Be removed</a></li>
-		<li><a href="#">When not needed</a></li>
-	</ul>
-</nav>
-
 <article>
-<form>
-    <p>Forms are styled like so:</p>
+	<div>
+		<a href = "addCategory.php">Add a New Category</a>
+	</div>
 
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
-</form>
+	<div>
+		<p>test article</p>
+		<p><a href = "editCategory.php"> Edit Category </a></p>
+		<p><a href = "deleteCategory.php"> Delete Category</a></p>
+	</div>
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';

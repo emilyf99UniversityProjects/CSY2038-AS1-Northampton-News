@@ -21,13 +21,15 @@ require 'nav.php';
 </nav>
 
 <article>
-<form>
-    <p>Forms are styled like so:</p>
+<div>
+		<a href = "addAdmin.php">Add a New Admin</a>
+	</div>
 
-    <label>Field 1</label> <input type="text" />
-    <label>Field 2</label> <input type="text" />
-    <label>Textarea</label> <textarea></textarea>
-</form>
+	<div>
+		<p>test article</p>
+		<p><a href = "editAdmin.php"> Edit Admin </a></p>
+		<p><a href = "deleteAdmin.php"> Remove Admin</a></p>
+	</div>
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';
