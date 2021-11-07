@@ -1,18 +1,13 @@
 
 <!-- Head PHP contains the html head as well as the webpages header-->
-<?php
-require 'head.php';
-?>
-
 <!--contains the main navigation of the page and the page banner -->
 <!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
-<?php
-require 'nav.php';
-?>
-
 <!-- Code for Side Bar Navigation (remove when not needed) -->
-<?php 
+<?php
+require 'head.php';
+require 'nav.php';
 require 'sideNavBar.php';
+require 'databaseJoin.php';
 ?>
 
 <article>
@@ -21,9 +16,15 @@ require 'sideNavBar.php';
 	</div>
 
 	<div>
-		<p>test article</p>
-		<p><a href = "editArticle.php"> Edit Article </a></p>
-		<p><a href = "deleteArticle.php"> Delete Article</a></p>
+		<?php
+		$results = $pdo->query('SELECT * FROM article ORDER BY publishDate DESC');
+
+		foreach ($results as $row) {
+			echo  '<li><h3>' . $row['title'] . '</h3>' . '<p> Publish Date: ' . $row['publishDate'] .'</p></li>';
+			echo  '<p><a href = "editArticle.php"> Edit Article </a></p>';
+			echo  '<p><a href = "deleteArticle.php"> Delete Article</a></p>';
+		}
+		?>
 	</div>
 
 
