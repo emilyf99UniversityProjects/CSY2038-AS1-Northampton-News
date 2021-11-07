@@ -1,35 +1,47 @@
 
 <!-- Head PHP contains the html head as well as the webpages header-->
-<?php
-require 'head.php';
-?>
-
 <!--contains the main navigation of the page and the page banner -->
 <!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
 <?php
+require 'head.php';
 require 'nav.php';
-?>
-
-<!-- Code for Side Bar Navigation (remove when not needed) -->
-<?php 
 require 'sideNavBar.php';
+require 'databaseJoin.php';
 ?>
 
-<article>
-<form>
-	<p>Add an Article:</p>
+<?php
+if(isset($_POST['submit'])) {
+    $stmt = $pdo->prepare('INSERT INTO article(title, content, category, publishDate) 
+                                       VALUES(:title, :content, :category, :publishDate)
+    ');
 
-		<label>Title</label> <input name = "title" type="text" required />
-		<label>Content</label> <textarea name = "content" required></textarea>
-		<label>Category<label><select name="category" required>
-  									<option value="test">Test</option>
-  									<option value="test">Test</option>
-  									<option value="test">Test</option>
-  									<option value="test">Test</option>
-								</select>
+    $values = [
+    'title' => $_POST['title'],
+	'content' => $_POST['content'],
+	'category' => $_POST['category'],
+	'publishDate' => $_POST['publishDate']
+    ];
 
-		<input type="submit" name="submit" value="Submit" />
-</form>
+    $stmt->execute($values);
+    echo '<p> Your Article Has Been Added </p>';
+}
+
+else {
+    echo '<article>
+	<form action="addArticle.php" method="POST">
+		<p>Add an Article:</p>
+	
+			<label>Title</label> <input name = "title" type="text" required />
+			<label>Publish Date, Please write in the following format YYYY-MM-DD</label> <input name = "publishDate" type = "text" required />
+			<label>Content</label> <textarea name = "content" required></textarea>
+			<label>Category<label><select name="category" required>
+										  <option value="#">Test</option>
+									</select>
+	
+			<input type="submit" name="submit" value="Submit" />
+	</form>';  
+}
+?>
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';
