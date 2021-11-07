@@ -15,7 +15,6 @@ require 'nav.php';
 require 'sideNavBar.php';
 ?>
 
-<article>
 
 <!-- contains the page footer and the closing html -->
 <?php
