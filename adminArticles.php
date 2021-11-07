@@ -26,8 +26,6 @@ require 'databaseJoin.php';
 		}
 		?>
 	</div>
-
-
 <!-- each article must have a link to edit or delete it. there must be a link to add a new article -->
 <!-- contains the page footer and the closing html -->
 <?php

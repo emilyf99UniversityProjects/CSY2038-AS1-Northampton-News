@@ -14,8 +14,8 @@ require 'nav.php';
 <form>
     <p>Log into your account:</p>
 
-    <label>Email</label> <input type="text" />
-    <label>Password</label> <input type="text" />
+    <label>Email</label> <input type="text" name = "email" />
+    <label>Password</label> <input type="password" name = "password" />
 
     <input type="submit" name="submit " value="Log In" />
 </form>

@@ -31,7 +31,7 @@ else {
     
         <label>User Name</label> <input name = "name" type="text" required/>
         <label>Email address</label> <input name = "email" type="text" required />
-        <label>Password</label> <input name = "password" type = "text" required>
+        <label>Password</label> <input name = "password" type = "password" required>
         <input type="submit" name="submit" value="submit" />
     </form>';
 }
