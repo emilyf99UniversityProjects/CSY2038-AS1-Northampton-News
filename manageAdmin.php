@@ -1,29 +1,30 @@
 
 <!-- Head PHP contains the html head as well as the webpages header-->
-<?php
-require 'head.php';
-?>
-
 <!--contains the main navigation of the page and the page banner -->
 <!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
-<?php
-require 'nav.php';
-?>
-
 <!-- Code for Side Bar Navigation (remove when not needed) -->
-<?php 
+<?php
+require 'head.php';
+require 'nav.php';
 require 'sideNavBar.php';
+require 'databaseJoin.php';
 ?>
 
 <article>
-<div>
+	<div>
 		<a href = "addAdmin.php">Add a New Admin</a>
 	</div>
 
 	<div>
-		<p>test article</p>
-		<p><a href = "editAdmin.php"> Edit Admin </a></p>
-		<p><a href = "deleteAdmin.php"> Remove Admin</a></p>
+	<?php 
+		$results = $pdo->query('SELECT * FROM users');
+
+		foreach ($results as $row) {
+			echo  '<li><p> Name: ' . $row['name'] . '</p><p> Email: ' .  $row['email'].'</p></li>';
+			echo  '<p><a href = "editAdmin.php"> Edit Admin </a></p>';
+			echo  '<p><a href = "deleteAdmin.php"> Delete Admin</a></p>';
+		}
+	?>
 	</div>
 <!-- contains the page footer and the closing html -->
 <?php
