@@ -33,10 +33,8 @@ else {
 	
 			<label>Title</label> <input name = "title" type="text" required />
 			<label>Publish Date, Please write in the following format YYYY-MM-DD</label> <input name = "publishDate" type = "text" required />
-			<label>Content</label> <textarea name = "content" required></textarea>
-			<label>Category<label><select name="category" required>
-										  <option value="#">Test</option>
-									</select>
+			<label>Content</label> <textarea name = "content" required> </textarea>
+			<label>Category<label> <input name = "category" type="text" required />
 	
 			<input type="submit" name="submit" value="Submit" />
 	</form>';  
