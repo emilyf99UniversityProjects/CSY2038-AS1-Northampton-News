@@ -14,7 +14,6 @@
 								echo '<li><a class="articleLink" href="#">' . $row['name'] . '</a></li>';
 							}
 						?>
-						<li><a class="articleLink" href="#">Category 1</a></li>
 					</ul>
 					<li><a class="articleLink" href="register.php">Register </a></li>
 					<li><a class="articleLink" href="login.php">Log in </a></li>
