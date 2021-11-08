@@ -11,7 +11,7 @@
 							$results = $pdo->query('SELECT * FROM category');
 
 							foreach ($results as $row) {
-								echo '<li><a class="articleLink" href="#">' . $row['name'] . '</a></li>';
+								echo '<li><a class="articleLink" href="categoryPages.php?name=' . $row['name'] . '">' . $row['name'] .'</a></li>';
 							}
 						?>
 					</ul>
