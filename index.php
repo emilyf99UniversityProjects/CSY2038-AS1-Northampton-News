@@ -11,7 +11,8 @@ require 'databaseJoin.php';
 $results = $pdo->query('SELECT * FROM article ORDER BY publishDate DESC LIMIT 10');
 
 foreach ($results as $row) {
-	echo  '<li><h3>' . $row['title'] . '</h3>' . '<p> Publish Date: ' . $row['publishDate'] .'</p></li>';
+	echo  '<li><h3><a class ="articleLink" href= "articlePages.php?name=' . $row['title'] . '">' . $row['title'] . '</a></h3>' . 
+	'<p> Publish Date: ' . $row['publishDate'] .'</p></li>';
 }
 ?>
 <!-- contains the page footer and the closing html -->
