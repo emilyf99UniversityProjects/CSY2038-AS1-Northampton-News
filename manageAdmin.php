@@ -4,6 +4,7 @@
 <!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
 <!-- Code for Side Bar Navigation (remove when not needed) -->
 <?php
+$title = 'NN - Manage Admin';
 require 'head.php';
 require 'nav.php';
 require 'sideNavBar.php';

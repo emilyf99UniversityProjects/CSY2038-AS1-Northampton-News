@@ -3,6 +3,7 @@
 <!--contains the main navigation of the page and the page banner -->
 <!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
 <?php
+$title = 'Northampton News - Register';
 require 'head.php';
 require 'nav.php';
 require 'databaseJoin.php';

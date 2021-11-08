@@ -3,6 +3,7 @@
 <!--contains the main navigation of the page and the page banner -->
 <!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
 <?php
+$title = 'NN - Add Category';
 require 'head.php';
 require 'nav.php';
 require 'sideNavBar.php';

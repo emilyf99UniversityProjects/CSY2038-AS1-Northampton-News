@@ -1,6 +1,7 @@
 
 <!-- Head PHP contains the html head as well as the webpages header-->
 <?php
+$title = 'NN - Edit Article';
 require 'head.php';
 ?>
 

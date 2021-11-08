@@ -4,6 +4,7 @@
 <!--PLEASE SEE THE TEMPLATE FILE-->
 <!-- Head PHP contains the html head as well as the webpages header-->
 <?php
+$title = 'Northampton News';
 require 'head.php';
 ?>
 
