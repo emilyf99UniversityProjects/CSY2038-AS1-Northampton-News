@@ -12,14 +12,14 @@ require 'databaseJoin.php';
 
 <?php
 if(isset($_POST['submit'])) {
-    $stmt = $pdo->prepare('INSERT INTO article(title, content, category, publishDate) 
-                                       VALUES(:title, :content, :category, :publishDate)
+    $stmt = $pdo->prepare('INSERT INTO article(title, content, categoryId, publishDate) 
+                                       VALUES(:title, :content, :categoryId, :publishDate)
     ');
 
     $values = [
     'title' => $_POST['title'],
 	'content' => $_POST['content'],
-	'category' => $_POST['category'],
+	'categoryId' => $_POST['categoryId'],
 	'publishDate' => $_POST['publishDate']
     ];
 
@@ -35,7 +35,7 @@ else {
 			<label>Title</label> <input name = "title" type="text" required />
 			<label>Publish Date, Please write in the following format YYYY-MM-DD</label> <input name = "publishDate" type = "text" required />
 			<label>Content</label> <textarea name = "content" required> </textarea>
-			<label>Category<label> <select name = "category" required />';
+			<label>Category<label> <select name = "categoryId" required />';
 
 			$results = $pdo->query('SELECT * FROM category');
 

@@ -1,3 +1,4 @@
+
 <?php
     $title = 'Northampton News';
     require 'databaseJoin.php';
@@ -5,11 +6,32 @@
     require 'nav.php';
 	require  'goBack.php';
 
-    if (isset($_GET['name'])) {
-        echo '<h3>Title: ' . $_GET['name'] .  '</h3>';
+?>
+
+<article>
+
+<?php
+
+    if (isset($_GET['articleId'])) {
+
+        $selectArt = $pdo->prepare('SELECT * FROM article WHERE articleId= :articleId');
+        $value = [
+            'articleId' => $_GET['articleId']
+        ];
+
+        $selectArt -> execute($value);
+
+        foreach($selectArt->fetchAll() as $row) {
+            echo '<h1>' . $row['title'] . '</h1>' ;
+            echo '<em>Publish Date: ' .$row['publishDate'] . '</em>';
+            echo '<p>' .$row['content'] . '<p>';
+            echo '<p>Category: ' .$row['categoryId'] . ' </p>';
+        }
        }
      
 ?>
+
+<!-- comment form -->
 <?php
     require 'foot.php';
 ?>
