@@ -16,7 +16,7 @@
         $selectCat -> execute($value);
 
         foreach($selectCat->fetchAll() as $row) {
-            echo '<a class="articleLink" href="articlePages.php?articleId=' . $row['articleId'] . '">' .$row['title'] . '</a>';
+            echo '<a class="articleLink" href="articlePages.php?articleId=' . $row['articleId'] . '">' . '<p>'.$row['title'] . '</p></a>';
         }
        }
      
