@@ -21,8 +21,8 @@ require 'databaseJoin.php';
 
 		foreach ($results as $row) {
 			echo  '<li><p>' . $row['name'].'</p></li>';
-			echo  '<p><a href = "editCategory.php"> Edit Category </a></p>';
-			echo  '<p><a href = "deleteCategory.php"> Delete Category</a></p>';
+			echo  '<p><a href = "editCategory.php?name=' . $row['name'] . '"> Edit Category </a></p>';
+			echo  '<p><a href = "deleteCategory.php?name=' . $row['name'] . '"> Delete Category</a></p>';
 		}
 	?>
 <!-- contains the page footer and the closing html -->
