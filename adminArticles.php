@@ -22,8 +22,8 @@ require 'databaseJoin.php';
 
 		foreach ($results as $row) {
 			echo  '<li><h3>' . $row['title'] . '</h3>' . '<p> Publish Date: ' . $row['publishDate'] .'</p></li>';
-			echo  '<p><a href = "editArticle.php"> Edit Article </a></p>';
-			echo  '<p><a href = "deleteArticle.php"> Delete Article</a></p>';
+			echo  '<p><a href = "editArticle.php?articleId=' . $row['articleId'] . '"> Edit Article </a></p>';
+			echo  '<p><a href = "deleteArticle.php?articleId=' . $row['articleId'] . '"> Delete Article</a></p>';
 		}
 		?>
 	</div>
