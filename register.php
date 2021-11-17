@@ -1,8 +1,5 @@
-
-<!-- Head PHP contains the html head as well as the webpages header-->
-<!--contains the main navigation of the page and the page banner -->
-<!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
 <?php
+session_start();
 $title = 'Northampton News - Register';
 require 'head.php';
 require 'nav.php';

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $title = 'Northampton News';
     require 'databaseJoin.php';
     require 'head.php';

@@ -1,6 +1,5 @@
-
-<!-- Head PHP contains the html head as well as the webpages header-->
 <?php
+session_start();
 $title = 'NN - User Comments';
 require 'head.php';
 ?>

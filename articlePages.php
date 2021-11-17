@@ -1,5 +1,5 @@
-
 <?php
+    session_start();
     $title = 'Northampton News';
     require 'databaseJoin.php';
     require 'head.php';
@@ -28,10 +28,13 @@
             echo '<p>Category: ' .$row['categoryId'] . ' </p>';
         }
        }
-     
+
+
+ if() 
 ?>
 
 <!-- comment form -->
+
 <?php
     require 'foot.php';
 ?>
