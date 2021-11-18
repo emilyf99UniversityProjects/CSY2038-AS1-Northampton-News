@@ -14,9 +14,6 @@ echo '<p>Category Deleted</p>';
 }
 ?>
 
-
-
-
 <!-- contains the page footer and the closing html -->
 <?php
 require 'foot.php';

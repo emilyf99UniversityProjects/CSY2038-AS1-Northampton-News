@@ -11,7 +11,6 @@
 <article>
 
 <?php
-
     if (isset($_GET['articleId'])) {
 
         $selectArt = $pdo->prepare('SELECT * FROM article WHERE articleId= :articleId');
@@ -29,8 +28,52 @@
         }
        }
 
+       if (isset($_GET['articleId'])) {
 
- if() 
+        $selectComm = $pdo->prepare('SELECT * FROM comment WHERE articleId= :articleId');
+        $value = [
+            'articleId' => $_GET['articleId']
+        ];
+
+        $selectComm -> execute($value);
+
+        foreach($selectComm->fetchAll() as $row) {
+            echo '<h3>Comments</h3>';
+            echo '<p> Posted By:  ' . $row['username'] . '</p>' ;
+            echo '<p> Comment: ' .$row['commentContent'] . '<p>';
+        }
+       }
+
+ if(isset($_SESSION['loggedin'])) {
+
+    if (isset($_POST['submit'])) {
+        $stmt = $pdo->prepare('INSERT INTO comment(username, commentContent, articleId) 
+                                           VALUES(:username,:commentContent,:articleId)');
+   
+        $value = [
+        'username' => $_SESSION['loggedin'],
+        'commentContent' => $_POST['commentContent'],
+        'articleId' => $_GET['articleId']
+        ];
+    
+        $stmt->execute($value);
+        echo '<p> Your Comment Has Been Added </p>';
+        
+    } 
+    else {
+    echo '<p>You are Logged in and can now Comment</p>';
+    echo '<form action="" method="POST">
+            <label>Comment:</label>
+            <textarea name = "commentContent" required> </textarea>
+            <input type="submit" name="submit" value="Submit"/>
+          </form>';
+    }
+
+}
+
+ else {
+     echo '<p>You Need To Be Logged In To Comment on a Article</p>';
+ }
 ?>
 
 <!-- comment form -->

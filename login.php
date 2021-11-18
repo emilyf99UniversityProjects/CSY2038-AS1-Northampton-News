@@ -15,10 +15,10 @@ require 'databaseJoin.php';
 <article>
 <?php
 if(isset($_POST['submit'])) {
-    $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+    $stmt = $pdo->prepare('SELECT * FROM users WHERE name = :name');
 
     $values = [
-        'email' => $_POST['email'],
+        'name' => $_POST['name'],
     ];
 
     $stmt->execute($values);
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
     if($stmt->rowCount() > 0) {
         $user = $stmt ->fetch();
 
-        $_SESSION['loggedin'] = $user['email'];
+        $_SESSION['loggedin'] = $user['name'];
         echo '<p>You have been logged in</p>';
     }
 
