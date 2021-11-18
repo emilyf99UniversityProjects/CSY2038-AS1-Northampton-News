@@ -19,6 +19,8 @@
 					<li><a class="articleLink" href="login.php">Log in </a></li>
 					<?php if(isset($_SESSION['loggedin']))  {
 						echo '<li><a class="articleLink" href="logout.php">Log Out</a></li>';
+						echo '<li>Welcome Back</li>';
+
 					} ?>
 				</li>
 			</ul>

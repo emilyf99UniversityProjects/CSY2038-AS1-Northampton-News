@@ -26,13 +26,14 @@ if(isset($_POST['submit'])) {
     if($stmt->rowCount() > 0) {
         $user = $stmt ->fetch();
 
-        $_SESSION['loggedin'] = $user['email'];
-        echo '<p>You have been logged in</p>';
-    }
-
+        if(password_verify($POST['password'], $user['password'])) {
+            $_SESSION['loggedin'] = $user['email'];
+            echo '<p>You have been logged in </p>';
+        }
     else {
-        echo '<p>Sorry, no matching details found</p>';
-    }
+        echo '<p>Sorry, Incorrect Username or Password</p>';
+        }
+    }   
 }
 
 else { 
