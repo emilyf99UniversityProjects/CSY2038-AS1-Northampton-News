@@ -25,9 +25,11 @@
             echo '<em>Publish Date: ' .$row['publishDate'] . '</em>';
             echo '<p>' .$row['content'] . '<p>';
             echo '<p>Category: ' .$row['categoryId'] . ' </p>';
-        }
-       }
+        } 
+       } ?>
 
+<h3>Comments</h3>
+<?php
        if (isset($_GET['articleId'])) {
 
         $selectComm = $pdo->prepare('SELECT * FROM comment WHERE articleId= :articleId');
@@ -38,8 +40,7 @@
         $selectComm -> execute($value);
 
         foreach($selectComm->fetchAll() as $row) {
-            echo '<h3>Comments</h3>';
-            echo '<p> Posted By:  ' . $row['username'] . '</p>' ;
+            echo '<p> Posted By: ' .  '<p><a class="articleLink" href="userComments.php?username=' . $row['username'] . '">'. $row['username'] . '</a></p>' ;
             echo '<p> Comment: ' .$row['commentContent'] . '<p>';
         }
        }
