@@ -6,6 +6,7 @@ require 'nav.php';
 require 'databaseJoin.php';
 
 unset($_SESSION['loggedin']);
+unset($_SESSION['adminloggedin']);
 echo '<p>You Have Been Logged Out</p>';
 ?>
 

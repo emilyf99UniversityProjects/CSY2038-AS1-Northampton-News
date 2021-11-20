@@ -26,8 +26,31 @@ if(isset($_POST['submit'])) {
     if($stmt->rowCount() > 0) {
         $user = $stmt ->fetch();
 
-        if(password_verify($POST['password'], $user['password'])) {
+        if(password_verify($_POST['password'], $user['password'])) {
             $_SESSION['loggedin'] = $user['email'];
+            echo '<p>You have been logged in </p>';
+        }
+    else {
+        echo '<p>Sorry, Incorrect Username or Password</p>';
+        }
+    }   
+}
+
+if(isset($_POST['submit'])) {
+    $stmt = $pdo->prepare('SELECT * FROM admin WHERE email = :email');
+
+    $values = [
+        'email' => $_POST['email'],
+    ];
+
+    $stmt->execute($values);
+
+    if($stmt->rowCount() > 0) {
+        $admin = $stmt ->fetch();
+
+        if(password_verify($_POST['password'], $admin['password'])) {
+            unset($_SESSION['loggedin']);
+            $_SESSION['adminloggedin'] = $admin['email'];
             echo '<p>You have been logged in </p>';
         }
     else {

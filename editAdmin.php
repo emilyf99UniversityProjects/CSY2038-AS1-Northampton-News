@@ -17,8 +17,9 @@ if (isset($_POST['submit'])) {
 else if(isset($_GET['email'])) {
 
 $selectAdmin = $pdo->prepare('SELECT * FROM admin WHERE email = :email');
+
     $value = [
-            'email' => $_GET['email']
+			'email' => $_GET['email'],
     ];
 
         $selectAdmin -> execute($value);
@@ -38,8 +39,6 @@ $selectAdmin = $pdo->prepare('SELECT * FROM admin WHERE email = :email');
 		<input type="text" name = "surname" value = "<?php echo $admin['surname']; ?>" required />
 		<label>Email</label>
 		<input type="text" name = "email" value = "<?php echo $admin['email']; ?>" required />
-		<label>Password</label>
-		<input type="text" name = "password" value = "<?php echo $admin['password']; ?>" required />
 		<input type="submit" name="submit" value="Submit" />
 </form>
 <!-- contains the page footer and the closing html -->

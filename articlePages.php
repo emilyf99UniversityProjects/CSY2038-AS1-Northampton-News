@@ -45,20 +45,32 @@
         }
        }
 
- if(isset($_SESSION['loggedin'])) {
+ if(isset($_SESSION['loggedin']) || isset($_SESSION['adminloggedin'])) {
 
     if (isset($_POST['submit'])) {
         $stmt = $pdo->prepare('INSERT INTO comment(username, commentContent, articleId) 
                                            VALUES(:username,:commentContent,:articleId)');
-   
-        $value = [
-        'username' => $_SESSION['loggedin'],
-        'commentContent' => $_POST['commentContent'],
-        'articleId' => $_GET['articleId']
-        ];
-    
-        $stmt->execute($value);
-        echo '<p> Your Comment Has Been Added </p>';
+        if(isset($_SESSION['loggedin'])) {
+            $value = [
+                'username' => $_SESSION['loggedin'],
+                'commentContent' => $_POST['commentContent'],
+                'articleId' => $_GET['articleId']
+                ];
+            
+                $stmt->execute($value);
+                echo '<p> Your Comment Has Been Added </p>';  
+        }
+
+        if(isset($_SESSION['adminloggedin'])) {
+            $value = [
+                'username' => $_SESSION['adminloggedin'],
+                'commentContent' => $_POST['commentContent'],
+                'articleId' => $_GET['articleId']
+                ];
+
+            $stmt->execute($value);
+            echo '<p> Your Comment Has Been Added </p>'; 
+        }
         
     } 
     else {
