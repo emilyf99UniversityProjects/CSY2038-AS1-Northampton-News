@@ -19,6 +19,11 @@ if(isset($_SESSION['adminloggedin'])) {
 	//if the submit button is clicked then the prepare statment updates all the fields in the form and replaces the old ones
 	if (isset($_POST['submit'])) {
 
+
+		//Two sources were used for adding the images
+		//Code for adding the images from https://www.geeksforgeeks.org/how-to-upload-image-into-database-and-display-it-using-php/
+		//Code for adding the images from https://www.codegrepper.com/code-examples/php/php+upload+image+to+database
+			
 		//the following three statments are used to get the article image name and location updated
 		$imageName = $_FILES['imageName']['name'];
 		$tempName = $_FILES['imageName']['tmp_name'];

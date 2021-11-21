@@ -16,9 +16,12 @@ if(isset($_SESSION['adminloggedin'])) {
 
 	//When the submit button is clicked all the values entered are added as a new record to the database
 	if(isset($_POST['submit'])) {
-	//INSERT REFERENCES
 	/*the three lines below are used to allow images to be added, there is a name, a temporary name as well as a folder variable.
 	The folder variable is used to direct the added photos to the correct directory*/
+
+	//Two sources were used for adding the images
+	//Code for adding the images from https://www.geeksforgeeks.org/how-to-upload-image-into-database-and-display-it-using-php/
+	//Code for adding the images from https://www.codegrepper.com/code-examples/php/php+upload+image+to+database
 	$imageName = $_FILES['imageName']['name'];
 	$tempName = $_FILES['imageName']['tmp_name'];
 	$folder = "images/articles/" .$imageName;
