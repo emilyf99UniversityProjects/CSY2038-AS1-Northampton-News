@@ -1,19 +1,17 @@
 <?php
 session_start();
-?>
-<!-- Head PHP contains the html head as well as the webpages header-->
-<!--contains the main navigation of the page and the page banner -->
-<!--This is seperate from the head.php file to make the navigation easier to improve in the future -->
-
-<?php
+/*The requires are used to generate the templates as well as connect to the database
+These are not stored in the public directory as they user should not be able to directly access these*/
 $title = 'Northampton News - Login';
 require '../head.php';
 require '../nav.php';
 require '../databaseJoin.php';
-?>
 
-<article>
-<?php
+echo '<article>';
+
+/*If the submit button is pressed then the email entered is compared to the database and its stored emails 
+to find a match,
+this first isset block is to search for a normal user in the user table in the database*/ 
 if(isset($_POST['submit'])) {
     $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
 
@@ -23,19 +21,25 @@ if(isset($_POST['submit'])) {
 
     $stmt->execute($values);
 
+    //checks whether there are any records in the database, if 0 then nothin will happen due to the > operator
     if($stmt->rowCount() > 0) {
         $user = $stmt ->fetch();
 
+        //below compares the password entered to the ones stored, if it finds a match then a login session is started
         if(password_verify($_POST['password'], $user['password'])) {
             $_SESSION['loggedin'] = $user['email'];
+            //displays a message letting the user know they are logged in
             echo '<p>You have been logged in </p>';
         }
     else {
+        //lets the user know that the login was unsuccessful 
         echo '<p>Sorry, Incorrect Username or Password</p>';
         }
     }   
 }
 
+/*the code below is mostly the same as the isset above, however this looks through the admin table to find 
+a login match for a admin instead of a user */
 if(isset($_POST['submit'])) {
     $stmt = $pdo->prepare('SELECT * FROM admin WHERE email = :email');
 
@@ -59,6 +63,7 @@ if(isset($_POST['submit'])) {
     }   
 }
 
+//if submit is not pressed then the empty form is displayed for the user to enter thier login details
 else { 
 ?>
     <form action="login.php" method="POST" >
@@ -68,9 +73,9 @@ else {
     <label>Password</label> <input type="password" name = "password" />
 
     <input type="submit" name="submit" value="Log In" />
-</form></article>
+</form>
+</article>
 
-<!-- contains the page footer and the closing html -->
 <?php
 }
 require '../foot.php';
