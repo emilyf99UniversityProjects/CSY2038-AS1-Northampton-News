@@ -1,10 +1,10 @@
 <?php
 session_start();
 $title = 'NN - Edit Category';
-require 'head.php';
-require 'nav.php';
-require 'sideNavBar.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php';
+require '../sideNavBar.php';
+require '../databaseJoin.php';
 ?>
 
 <article>
@@ -41,5 +41,5 @@ $selectName = $pdo->prepare('SELECT * FROM category WHERE name = :name');
 <!-- contains the page footer and the closing html -->
 <?php
 }
-require 'foot.php';
+require '../foot.php';
 ?>

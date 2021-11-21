@@ -1,10 +1,10 @@
 <?php
     session_start();
     $title = 'Northampton News';
-    require 'databaseJoin.php';
-    require 'head.php';
-    require 'nav.php';
-	require  'goBack.php';
+    require '../databaseJoin.php';
+    require '../head.php';
+    require '../nav.php';
+	require  '../goBack.php';
 
 ?>
 
@@ -61,17 +61,6 @@
                 $stmt->execute($value);
                 echo '<p> Your Comment Has Been Added </p>';  
         }
-
-        if(isset($_SESSION['adminloggedin'])) {
-            $value = [
-                'username' => $_SESSION['adminloggedin'],
-                'commentContent' => $_POST['commentContent'],
-                'articleId' => $_GET['articleId']
-                ];
-
-            $stmt->execute($value);
-            echo '<p> Your Comment Has Been Added </p>'; 
-        }
         
     } 
     else {
@@ -93,5 +82,5 @@
 <!-- comment form -->
 
 <?php
-    require 'foot.php';
+    require '../foot.php';
 ?>

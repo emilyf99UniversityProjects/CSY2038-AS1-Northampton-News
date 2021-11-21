@@ -1,10 +1,10 @@
 <?php
     session_start();
     $title = 'Northampton News';
-    require 'databaseJoin.php';
-    require 'head.php';
-    require 'nav.php';
-    require 'goBack.php';
+    require '../databaseJoin.php';
+    require '../head.php';
+    require '../nav.php';
+    require '../goBack.php';
 
     if (isset($_GET['categoryId'])) {
 
@@ -23,5 +23,5 @@
      
 ?>
 <?php
-    require 'foot.php';
+    require '../foot.php';
 ?>

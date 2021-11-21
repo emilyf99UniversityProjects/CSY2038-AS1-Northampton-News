@@ -7,9 +7,9 @@ session_start();
 
 <?php
 $title = 'Northampton News - Login';
-require 'head.php';
-require 'nav.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php';
+require '../databaseJoin.php';
 ?>
 
 <article>
@@ -73,5 +73,5 @@ else {
 <!-- contains the page footer and the closing html -->
 <?php
 }
-require 'foot.php';
+require '../foot.php';
 ?>

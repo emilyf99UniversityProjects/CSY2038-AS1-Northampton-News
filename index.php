@@ -1,9 +1,9 @@
 <?php
 session_start();
 $title = 'Northampton News - Home';
-require 'head.php';
-require 'nav.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php';
+require '../databaseJoin.php';
 
 $results = $pdo->query('SELECT * FROM article ORDER BY publishDate DESC LIMIT 10');
 
@@ -19,5 +19,5 @@ foreach ($results as $row) {
 
 <!-- contains the page footer and the closing html -->
 <?php
-require 'foot.php';
+require '../foot.php';
 ?>

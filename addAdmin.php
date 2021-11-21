@@ -1,9 +1,9 @@
 <?php
 session_start();
 $title = 'NN - Add Admin';
-require 'head.php';
-require 'nav.php';
-require 'sideNavBar.php';
+require '../head.php';
+require '../nav.php';
+require '../sideNavBar.php';
 ?>
 <?php
 if(isset($_POST['submit'])) {
@@ -39,5 +39,5 @@ else {
 ?>
 <!-- contains the page footer and the closing html -->
 <?php
-require 'foot.php';
+require '../foot.php';
 ?>

@@ -1,9 +1,9 @@
 <?php
 session_start();
 $title = 'Northampton News - Comments';
-require 'head.php';
-require 'nav.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php';
+require '../databaseJoin.php';
 
 
     $displayComm = $pdo->prepare('SELECT * FROM comment WHERE username= :username');
@@ -20,6 +20,6 @@ require 'databaseJoin.php';
         echo  '<p>Comment Posted: "' .$row['commentContent'] .'" </p>';
         echo '<p> On Article: '. $row['articleId']. '</p>';
     } 
-require 'foot.php';
+require '../foot.php';
 ?>
 

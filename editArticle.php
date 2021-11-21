@@ -1,10 +1,10 @@
 <?php
 session_start();
 $title = 'NN - Edit Article';
-require 'head.php';
-require 'nav.php'; 
-require 'sideNavBar.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php'; 
+require '../sideNavBar.php';
+require '../databaseJoin.php';
 ?>
 
 <article>
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 		'categoryId' => $_POST['categoryId'],
 		'publishDate' => $_POST['publishDate']
 	];
-	
+
 	move_uploaded_file($tempName, $folder);
 
     $stmt ->execute($value);
@@ -80,5 +80,5 @@ $selectArticleFields = $pdo->prepare('SELECT * FROM article WHERE articleId = :a
 <!-- contains the page footer and the closing html -->
 <?php
 }
-require 'foot.php';
+require '../foot.php';
 ?>

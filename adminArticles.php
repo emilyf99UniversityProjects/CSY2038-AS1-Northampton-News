@@ -1,10 +1,10 @@
 <?php
 session_start();
 $title = 'NN - Manage Articles';
-require 'head.php';
-require 'nav.php';
-require 'sideNavBar.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php';
+require '../sideNavBar.php';
+require '../databaseJoin.php';
 ?>
 
 <article>
@@ -26,5 +26,5 @@ require 'databaseJoin.php';
 <!-- each article must have a link to edit or delete it. there must be a link to add a new article -->
 <!-- contains the page footer and the closing html -->
 <?php
-require 'foot.php';
+require '../foot.php';
 ?>

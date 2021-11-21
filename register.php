@@ -1,9 +1,9 @@
 <?php
 session_start();
 $title = 'Northampton News - Register';
-require 'head.php';
-require 'nav.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php';
+require '../databaseJoin.php';
 ?>
 
 <?php
@@ -38,5 +38,5 @@ else {
 
 <!-- contains the page footer and the closing html -->
 <?php
-require 'foot.php';
+require '../foot.php';
 ?>

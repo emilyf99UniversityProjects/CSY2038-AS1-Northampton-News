@@ -1,10 +1,10 @@
 <?php
 session_start();
 $title = 'NN - Manage Categories';
-require 'head.php';
-require 'nav.php'; 
-require 'sideNavBar.php';
-require 'databaseJoin.php';
+require '../head.php';
+require '../nav.php'; 
+require '../sideNavBar.php';
+require '../databaseJoin.php';
 ?>
 
 <article>
