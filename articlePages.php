@@ -22,6 +22,7 @@
 
         foreach($selectArt->fetchAll() as $row) {
             echo '<h1>' . $row['title'] . '</h1>' ;
+            echo '<image src="images/articles/' . $row['imageName'] . '" width = 800px height = 500px >';
             echo '<em>Publish Date: ' .$row['publishDate'] . '</em>';
             echo '<p>' .$row['content'] . '<p>';
             echo '<p>Category: ' .$row['categoryId'] . ' </p>';

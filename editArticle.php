@@ -11,11 +11,25 @@ require 'databaseJoin.php';
 <?php
 
 if (isset($_POST['submit'])) {
-    $stmt = $pdo-> prepare('UPDATE article SET title = :title, content = :content, categoryId = :categoryId, publishDate = :publishDate 
-							WHERE articleId = :articleId');
+	$imageName = $_FILES['imageName']['name'];
+	$tempName = $_FILES['imageName']['tmp_name'];
+	$folder = "images/articles/" .$imageName;
 
-    unset($_POST['submit']);
-    $stmt ->execute($_POST);
+    $stmt = $pdo-> prepare('UPDATE article SET title = :title, imageName = :imageName, content = :content, categoryId = :categoryId, publishDate = :publishDate 
+							WHERE articleId = :articleId');
+	
+	$value = [
+		'articleId' => $_POST['articleId'],
+		'title' => $_POST['title'],
+		'imageName' => $imageName,
+		'content' => $_POST['content'],
+		'categoryId' => $_POST['categoryId'],
+		'publishDate' => $_POST['publishDate']
+	];
+	
+	move_uploaded_file($tempName, $folder);
+
+    $stmt ->execute($value);
         echo '<p>Article Edited</p>';
 }
 else if(isset($_GET['articleId'])) {
@@ -31,7 +45,7 @@ $selectArticleFields = $pdo->prepare('SELECT * FROM article WHERE articleId = :a
 ?>
 
 
-<form action="editArticle.php" method= "POST">
+<form action="editArticle.php" method= "POST" enctype = "multipart/form-data">
     <p>Edit Category:</p>
 
 		<label>Title</label>
@@ -39,6 +53,9 @@ $selectArticleFields = $pdo->prepare('SELECT * FROM article WHERE articleId = :a
 		<input type = "hidden" name = "articleId" value = "<?php echo $article['articleId']; ?>" required />
 		
 		<input type="text" name = "title" value = "<?php echo $article['title']; ?>" required />
+
+		<label>Image (Please only Add PNGs to limit Website Size)</label>
+		<input type = "file" name = "imageName" accept = ".png" required />
 
 		<label>Publish Date, Please write in the following format YYYY-MM-DD</label> 
 		<input type = "text" name = "publishDate" value = "<?php echo $article['publishDate']; ?>" required />
@@ -57,8 +74,7 @@ $selectArticleFields = $pdo->prepare('SELECT * FROM article WHERE articleId = :a
 				}
 			echo '<input type="submit" name="submit" value="Submit" />';
 			?>
-			
-</form>
+	</form>
 
 			
 <!-- contains the page footer and the closing html -->
