@@ -17,7 +17,7 @@ if(isset($_SESSION['adminloggedin'])) {
 
 	//When the submit button is pressed all the current values in the form replace the old ones 
 	if (isset($_POST['submit'])) {
-    	$stmt = $pdo-> prepare('UPDATE admin SET username = :username, firstname = :firstname, surname = :surname, email = :email, password = :password 
+    	$stmt = $pdo-> prepare('UPDATE admin SET username = :username, firstname = :firstname, surname = :surname, email = :email 
 							WHERE email = :email');
     	unset($_POST['submit']);
     	$stmt ->execute($_POST);

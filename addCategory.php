@@ -14,7 +14,6 @@ if(isset($_SESSION['adminloggedin'])) {
     allow non-admins to get access to admin only areas */
     require '../sideNavBar.php';
 
-
     //When the submit button is clicked all the values entered are added as a new record to the database
     if(isset($_POST['submit'])) {
         $stmt = $pdo->prepare('INSERT INTO category(name) 
@@ -29,7 +28,6 @@ if(isset($_SESSION['adminloggedin'])) {
     //Once the statement is executed and been successful the user is notified with a message that displays in a P tag
     echo '<p> Your Category Has Been Added </p>';
     }
-
     //if the submit button is not pressed the empty form is displayed
     else {
         echo '<article>
