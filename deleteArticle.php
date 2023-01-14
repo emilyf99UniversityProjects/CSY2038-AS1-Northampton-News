@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'NN - Delete Article';
+$title = 'Fotheby\'s - Delete Article';
 require '../head.php';
 require '../nav.php';
 require '../databaseJoin.php';
@@ -15,8 +15,8 @@ if(isset($_SESSION['adminloggedin'])) {
 	require '../sideNavBar.php';
 
     /*When the article delete is clicked the articleId is used as the iD to ensure the right article gets deleted*/
-    if(isset($_GET['articleId'])) {
-        $removeCategory = $pdo->prepare('DELETE FROM article WHERE articleId= :articleId');
+    if(isset($_GET['lotReference'])) {
+        $removeCategory = $pdo->prepare('DELETE FROM article WHERE lotReference= :lotReference');
         $removeCategory ->execute($_GET);
 
     echo '<p>Article Deleted</p>';

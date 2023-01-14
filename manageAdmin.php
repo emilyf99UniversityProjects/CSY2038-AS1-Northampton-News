@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'NN - Manage Admin';
+$title = 'Fotheby\'s Manage Admin';
 require '../head.php';
 require '../nav.php';
 require '../sideNavBar.php';

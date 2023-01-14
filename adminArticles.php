@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'NN - Manage Articles';
+$title = 'Fotheby\'s - Manage Articles';
 require '../head.php';
 require '../nav.php';
 require '../databaseJoin.php';
@@ -24,16 +24,16 @@ if(isset($_SESSION['adminloggedin'])) {
 		<?php
 		/*This selects all articles that are in the database, they are added to the 
 		page in order of descending publish date to make them easier to search through*/
-		$results = $pdo->query('SELECT * FROM article ORDER BY publishDate DESC');
+		$results = $pdo->query('SELECT * FROM article ORDER BY lotReference DESC');
 
 		/*For each article that is pulled out it is displayed with a heading and a publish date.
 		There are two links displayed below it that allow the user to edit or delete that article. 
 		The article ID is used to make sure that when these options are clicked the user is taken to the right 
 		edit and delete page */
 		foreach ($results as $row) {
-			echo  '<li><h3>' . $row['title'] . '</h3>' . '<p> Publish Date: ' . $row['publishDate'] .'</p></li>';
-			echo  '<p><a href = "editArticle.php?articleId=' . $row['articleId'] . '"> Edit Article </a></p>';
-			echo  '<p><a href = "deleteArticle.php?articleId=' . $row['articleId'] . '"> Delete Article</a></p>';
+			echo  '<li><h3>' . $row['pieceTitle'] . '</h3>' . '<p> Lot Number: ' . $row['lotNumber'] .'</p></li>';
+			echo  '<p><a href = "editArticle.php?lotReference=' . $row['lotReference'] . '"> Edit Article </a></p>';
+			echo  '<p><a href = "deleteArticle.php?lotReference=' . $row['lotReference'] . '"> Delete Article</a></p>';
 		}
 		?>
 	</div>

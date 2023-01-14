@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'NN - Add Article';
+$title = 'Fotheby\'s  - Add Article';
 require '../head.php';
 require '../nav.php';
 require '../databaseJoin.php';
@@ -26,16 +26,28 @@ if(isset($_SESSION['adminloggedin'])) {
 	$tempName = $_FILES['imageName']['tmp_name'];
 	$folder = "images/articles/" .$imageName;
 
-    $stmt = $pdo->prepare('INSERT INTO article(title, content, categoryId, publishDate, imageName) 
-                                       VALUES(:title, :content, :categoryId, :publishDate, :imageName)
+    $stmt = $pdo->prepare('INSERT INTO article(pieceTitle, pieceDescription, categoryId, auctionDate, imageName, collectionTitle, lotNumber, dateOfProduction, estimate, dimensions, auctionPeriod, framed, artist, material, pieceWeight, medium, pieceType) 
+                                       VALUES(:pieceTitle, :pieceDescription, :categoryId, :auctionDate, :imageName, :collectionTitle, :lotNumber, :dateOfProduction, :estimate, :dimensions, :auctionPeriod, :framed, :artist, :material, :pieceWeight, :medium, :pieceType)
     ');
 
     $values = [
-    'title' => $_POST['title'],
-	'content' => $_POST['content'],
+    'pieceTitle' => $_POST['pieceTitle'],
+	'pieceDescription' => $_POST['pieceDescription'],
 	'categoryId' => $_POST['categoryId'],
-	'publishDate' => $_POST['publishDate'],
-	'imageName'=> $imageName
+	'auctionDate' => $_POST['auctionDate'],
+	'imageName'=> $imageName,
+	'collectionTitle' => $_POST['collectionTitle'],
+	'lotNumber' => $_POST['lotNumber'],
+	'dateOfProduction' => $_POST['dateOfProduction'],
+	'estimate' => $_POST['estimate'],
+	'dimensions' => $_POST['dimensions'],
+	'auctionPeriod' => $_POST['auctionPeriod'],
+	'framed' => $_POST['framed'],
+	'artist' => $_POST['artist'],
+	'material' => $_POST['material'],
+	'pieceWeight' => $_POST['pieceWeight'],
+	'medium' => $_POST['medium'],
+	'pieceType' => $_POST['pieceType']
     ];
 
 	//The move_uploaded_file is to move the created image into the correct directory within the website
@@ -51,10 +63,22 @@ if(isset($_SESSION['adminloggedin'])) {
 		<form action="addArticle.php" method="POST" enctype = "multipart/form-data">
 		<p>Add an Article:</p>
 	
-			<label>Title</label> <input name = "title" type="text" required />
+			<label>Piece Title</label> <input name = "pieceTitle" type="text" required />
+			<label>Collection Title</label> <input name = "collectionTitle" type="text" required />
+			<label>Lot Number</label> <input name = "lotNumber" type="text" required />
+			<label>Artist</label> <input name = "artist" type="text" required />
+			<label>Estimate</label> <input name = "estimate" type="text" required />
+			<label>Dimensions</label> <input name = "dimensions" type="text" required />
+			<label>Date of Production</label> <input name = "dateOfProduction" type = "text" required />
+			<label>Auction Date</label> <input name = "auctionDate" type ="text" required />
+			<label>Auction Period</label> <input name = "auctionPeriod" type="text" required />
+			<label>Framed</label> <input name = "framed" type="text" required />
+			<label>Material</label> <input name = "material" type="text" required />
+			<label>Weight (KG\'s)</label> <input name = "pieceWeight" type="text" required />
+			<label>Medium</label> <input name = "medium" type="text" required />
+			<label>Piece Type</label> <input name = "pieceType" type="text" required />
 			<label>Image (Please only Add PNGs to limit Website Size)</label> <input name = "imageName" type = "file" accept=".png" required/>
-			<label>Publish Date, Please write in the following format YYYY-MM-DD</label> <input name = "publishDate" type = "text" required />
-			<label>Content</label> <textarea name = "content" required> </textarea>
+			<label>Piece Description</label> <textarea name = "pieceDescription" required> </textarea>
 			<label>Category<label> <select name = "categoryId" required />';
 
 			$results = $pdo->query('SELECT * FROM category');

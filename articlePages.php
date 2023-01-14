@@ -2,7 +2,7 @@
     session_start();
     /*The requires are used to generate the templates as well as connect to the database
     These are not stored in the public directory as they user should not be able to directly access these*/
-    $title = 'Northampton News';
+    $title = 'Fotheby\'s';
     require '../databaseJoin.php';
     require '../head.php';
     require '../nav.php';
@@ -17,11 +17,11 @@
 <?php
     /*the if statement and the prpare statement are used to select the correct article,
     the article Id from the URL is used to select the matching article within the database*/
-    if (isset($_GET['articleId'])) {
+    if (isset($_GET['lotReference'])) {
 
-        $selectArt = $pdo->prepare('SELECT * FROM article WHERE articleId= :articleId');
+        $selectArt = $pdo->prepare('SELECT * FROM article WHERE lotReference= :lotReference');
         $value = [
-            'articleId' => $_GET['articleId']
+            'lotReference' => $_GET['lotReference']
         ];
 
         $selectArt -> execute($value);

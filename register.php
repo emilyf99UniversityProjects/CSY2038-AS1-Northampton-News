@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'Northampton News - Register';
+$title = 'Fotheby\'s - Register';
 require '../head.php';
 require '../nav.php';
 require '../databaseJoin.php';
