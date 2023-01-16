@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'Fotheby\'s - Delete Admin';
+$title = 'Fotheby\'s - Delete Staff Account';
 require '../head.php';
 require '../nav.php';
 require '../databaseJoin.php';
@@ -21,13 +21,13 @@ if(isset($_SESSION['adminloggedin'])) {
       $removeAdmin = $pdo->prepare('DELETE FROM admin WHERE email= :email');
       $removeAdmin ->execute($_GET);
 
-  echo '<p>Admin Deleted</p>';
+  echo '<p>Staff Account Deleted</p>';
   }
 }
 //if an admin is not logged in then error messages are echo'd asking for a admin log in to continue
 else {
-    echo '<h3>You need to be logged in as a Admin to access this page</h3>';
-    echo '<h3>Please Log in as a Admin to try again</h3>';
+    echo '<h3>You need to be logged into a Staff Account to access this page</h3>';
+    echo '<h3>Please Log in as Staff to try again</h3>';
 }
 require '../foot.php';
 ?>

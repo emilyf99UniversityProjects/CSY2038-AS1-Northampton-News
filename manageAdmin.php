@@ -12,7 +12,7 @@ require '../databaseJoin.php';
 <article>
 	<!--This div is used to give the user a link to create a new admin -->
 	<div>
-		<a href = "addAdmin.php">Add a New Admin</a>
+		<a href = "addAdmin.php">Add a New Staff Account</a>
 	</div>
 
 	<div>

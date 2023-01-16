@@ -2,7 +2,7 @@
 session_start();
 /*The requires are used to generate the templates as well as connect to the database
 These are not stored in the public directory as they user should not be able to directly access these*/
-$title = 'Fotheby\'s  - Add Admin';
+$title = 'Fotheby\'s  - Add Staff Account';
 require '../head.php';
 require '../nav.php';
 
@@ -39,7 +39,7 @@ if(isset($_SESSION['adminloggedin'])) {
     else {
         echo '<article>
         <form action="addAdmin.php" method="POST">
-            <p>Create a New Admin:</p>
+            <p>Create a New Staff Account:</p>
 
             <label>First Name</label> <input name = "firstname" type="text" required/>
             <label>Surname</label> <input name = "surname" type="text" required/>
@@ -53,8 +53,8 @@ if(isset($_SESSION['adminloggedin'])) {
 
 //if an admin is not logged in then error messages are echo'd asking for a admin log in to continue
 else {
-    echo '<h3>You need to be logged in as a Admin to access this page</h3>';
-    echo '<h3>Please Log in as a Admin to try again</h3>';
+    echo '<h3>You need to be logged into a Staff Account to access this page</h3>';
+    echo '<h3>Please Log in as Staff to try again</h3>';
 }
 require '../foot.php';
 ?>
