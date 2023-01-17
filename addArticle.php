@@ -26,8 +26,8 @@ if(isset($_SESSION['adminloggedin'])) {
 	$tempName = $_FILES['imageName']['tmp_name'];
 	$folder = "images/articles/" .$imageName;
 
-    $stmt = $pdo->prepare('INSERT INTO article(pieceTitle, pieceDescription, categoryId, auctionDate, imageName, collectionTitle, lotNumber, dateOfProduction, estimate, dimensions, auctionPeriod, framed, artist, material, pieceWeight, medium, pieceType) 
-                                       VALUES(:pieceTitle, :pieceDescription, :categoryId, :auctionDate, :imageName, :collectionTitle, :lotNumber, :dateOfProduction, :estimate, :dimensions, :auctionPeriod, :framed, :artist, :material, :pieceWeight, :medium, :pieceType)
+    $stmt = $pdo->prepare('INSERT INTO article(pieceTitle, pieceDescription, categoryId, auctionDate, imageName, collectionTitle, lotNumber, dateOfProduction, estimate, dimensions, auctionPeriod, framed, artist, material, pieceWeight, medium, pieceType, locationId) 
+                                       VALUES(:pieceTitle, :pieceDescription, :categoryId, :auctionDate, :imageName, :collectionTitle, :lotNumber, :dateOfProduction, :estimate, :dimensions, :auctionPeriod, :framed, :artist, :material, :pieceWeight, :medium, :pieceType, :locationId)
     ');
 
     $values = [
@@ -47,7 +47,8 @@ if(isset($_SESSION['adminloggedin'])) {
 	'material' => $_POST['material'],
 	'pieceWeight' => $_POST['pieceWeight'],
 	'medium' => $_POST['medium'],
-	'pieceType' => $_POST['pieceType']
+	'pieceType' => $_POST['pieceType'],
+	'locationId' => $_POST['locationId']
     ];
 
 	//The move_uploaded_file is to move the created image into the correct directory within the website
@@ -68,15 +69,15 @@ if(isset($_SESSION['adminloggedin'])) {
 			<label>Lot Number</label> <input name = "lotNumber" type="text" required />
 			<label>Artist</label> <input name = "artist" type="text" required />
 			<label>Estimate</label> <input name = "estimate" type="text" required />
-			<label>Dimensions</label> <input name = "dimensions" type="text" required />
+			<label>Dimensions</label> <input name = "dimensions" type="text" />
 			<label>Date of Production</label> <input name = "dateOfProduction" type = "text" required />
 			<label>Auction Date</label> <input name = "auctionDate" type ="text" required />
 			<label>Auction Period</label> <input name = "auctionPeriod" type="text" required />
-			<label>Framed</label> <input name = "framed" type="text" required />
-			<label>Material</label> <input name = "material" type="text" required />
-			<label>Weight (KG\'s)</label> <input name = "pieceWeight" type="text" required />
-			<label>Medium</label> <input name = "medium" type="text" required />
-			<label>Piece Type</label> <input name = "pieceType" type="text" required />
+			<label>Framed</label> <input name = "framed" type="text"/>
+			<label>Material</label> <input name = "material" type="text"/>
+			<label>Weight (KG\'s)</label> <input name = "pieceWeight" type="text"/>
+			<label>Medium</label> <input name = "medium" type="text"/>
+			<label>Piece Type</label> <input name = "pieceType" type="text" />
 			<label>Image (Please only Add PNGs to limit Website Size)</label> <input name = "imageName" type = "file" accept=".png" required/>
 			<label>Piece Description</label> <textarea name = "pieceDescription" required> </textarea>
 			<label>Category<label> <select name = "categoryId" required />';
@@ -87,14 +88,15 @@ if(isset($_SESSION['adminloggedin'])) {
 				foreach ($results as $row) {
 					echo '<option value ="'. $row['name'] . '">' . $row['name'] . '</option>';
 				}
-			echo '<input type="submit" name="submit" value="Submit" />'
-
-			'<label>Auction Location<label> <select name = "loationId" required />';
-
+			echo '<input type="hidden" name="submit" value="Submit" />';
+				?>
+			<label>Auction Location<label> <select name = "locationId" required />
+			
+				<?php
 			$resultsLoc = $pdo->query('SELECT * FROM locations');
 				/*The foreach loop is used to select all the category options that have been added to the site. 
 				This ensures that articles can't be added to a category that doesn't exist */ 
-				foreach ($results as $row) {
+				foreach ($resultsLoc as $row) {
 					echo '<option value ="'. $row['name'] . '">' . $row['name'] . '</option>';
 				}
 			echo '<input type="submit" name="submit" value="Submit" />

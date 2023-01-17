@@ -8,7 +8,7 @@ require '../nav.php';
 require '../databaseJoin.php';
 
 //The if statement below checks if an admin is logged in, the code for the page will only run if an admin is logged in
-if(isset($_SESSION['adminloggedin'])) {
+if(isset($_SESSION['loggedin'])) {
 
 	/*the side bar require is not with the rest of the templates as access to this could 
     allow non-admins to get access to admin only areas */
@@ -42,8 +42,8 @@ if(isset($_SESSION['adminloggedin'])) {
 
 //if an admin is not logged in then error messages are echo'd asking for a admin log in to continue
 else {
-	echo '<h3>You need to be logged into a Staff Account to access this page</h3>';
-    echo '<h3>Please Log in as Staff to try again</h3>';
+	echo '<h3>You need to be logged into a User Account to access this page</h3>';
+    echo '<h3>Please Log into your account to try again</h3>';
 }
 require '../foot.php';
 ?>

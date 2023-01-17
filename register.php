@@ -9,7 +9,7 @@ require '../databaseJoin.php';
 
 /*If submit is clicked then the asccount details added by the user are added to the users table  */
 if(isset($_POST['submit'])) {
-    $stmt = $pdo->prepare('INSERT INTO users(name, email, password) 
+    $stmt = $pdo->prepare('INSERT INTO usersRequest(name, email, password) 
                                        VALUES(:name,:email,:password)
     ');
 

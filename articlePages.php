@@ -34,16 +34,16 @@
             //a image width and height is added to ensure the image does not overload the template boundaries
             echo '<image src="images/articles/' . $row['imageName'] . '" width = 800px height = 500px >';
 	        echo '<p>Lot Number ' .$row['lotNumber'] . '</p>';
-	        echo '<p>Auction Collection ' .$row['collecionTitle'] . '</p>';
+	        echo '<p>Auction Collection ' .$row['collectionTitle'] . '</p>';
 	        echo '<p>Artist ' .$row['artist'] . '</p>';
-            echo '<p>Category ' .$row['category'] . '</p>';
+            echo '<p>Category ' .$row['categoryId'] . '</p>';
 	        echo '<p>Lot Number ' .$row['lotNumber'] . '</p>';
             echo '<p>Piece Description ' .$row['pieceDescription'] . '</p>';
             echo '<p>Date of Production ' .$row['dateOfProduction'] . '</p>';
             echo '<h3>Auction Details</h3>';
 	        echo '<p>Auction Date ' .$row['auctionDate'] . '</p>';
 	        echo '<p>Auction Period ' .$row['auctionPeriod'] . '</p>';
-	        echo '<p>Auction Location ' .$row['auctionLocations'] . '</p>';
+	        echo '<p>Auction Location ' .$row['locationId'] . '</p>';
             echo '<h3>Additional Details (If Applicable)</h3>';
             echo '<p>Estimated Price ' .$row['estimate'] . '</p>';
             echo '<p>Dimensions (CM\'s) ' .$row['dimensions'] . '</p>';

@@ -147,7 +147,7 @@ if(isset($_SESSION['adminloggedin'])) {
 				foreach ($results as $row) {
 					echo '<option value ="'. $row['name'] . '">' . $row['name'] . '</option>';
 				}
-			echo '<input type="submit" name="submit" value="Submit" />';
+			echo '<input type="hidden" name="submit" value="Submit" />';
 			?>
 
 			<label>Auction Location<label> <select name = "locationId" required >
