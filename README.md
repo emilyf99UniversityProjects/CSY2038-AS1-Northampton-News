@@ -1,4 +1,4 @@
-# CSY2038 AS1-Northampton New
+# CSY2038 AS1-Northampton News
 ![Screenshot 2023-07-31 031331](https://github.com/emilyf99UniversityProjects/CSY2038-AS1-Northampton-News/assets/72047699/ef5554be-00ff-4dc4-9da0-82a99549e634)
 
 ## Skills Used
